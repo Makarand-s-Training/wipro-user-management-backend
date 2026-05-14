@@ -1,4 +1,4 @@
-# User Management System (Intentionally Vulnerable Demo)
+# User Management System (Intentionally Vulnerable Demo.)
 
 ⚠️ **WARNING: THIS APPLICATION CONTAINS INTENTIONAL SECURITY VULNERABILITIES AND POOR CODING PRACTICES** ⚠️
 
