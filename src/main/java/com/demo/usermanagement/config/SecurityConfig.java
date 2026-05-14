@@ -48,6 +48,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+            // Enable CORS with default configuration from CorsConfig
+            .cors(cors -> cors.configure(http))
+            
             // VULNERABILITY: Disable CSRF protection
             .csrf(csrf -> csrf.disable())
             
@@ -62,6 +65,7 @@ public class SecurityConfig {
                 .requestMatchers("/actuator/**").permitAll()    // VULNERABILITY: Actuator without auth
                 .requestMatchers("/swagger-ui/**").permitAll()
                 .requestMatchers("/api-docs/**").permitAll()
+                .requestMatchers("/v3/api-docs/**").permitAll()
                 .anyRequest().permitAll()                       // VULNERABILITY: All other endpoints without auth
             );
         

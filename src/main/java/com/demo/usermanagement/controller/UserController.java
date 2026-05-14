@@ -39,6 +39,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/users")
+@CrossOrigin(origins = "*", maxAge = 3600)  // VULNERABILITY: Allow all origins
 @Slf4j
 @Tag(name = "User Management", description = "APIs for managing users")
 public class UserController {
