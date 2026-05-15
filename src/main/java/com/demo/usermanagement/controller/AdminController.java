@@ -30,7 +30,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/admin")
-@CrossOrigin(origins = "*", maxAge = 3600)  // VULNERABILITY: Allow all origins
+@CrossOrigin(originPatterns = "*", maxAge = 3600)  // VULNERABILITY: Allow all origins
 @Slf4j
 @Tag(name = "Admin (VULNERABLE)", description = "Admin endpoints - NO AUTHENTICATION REQUIRED!")
 public class AdminController {
